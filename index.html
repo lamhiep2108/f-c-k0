@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Temperature(celcius){
+        if (celcius < -273){
+            this.celcius = -273
+        } else {
+            this.celcius = celcius
+        };
+        this.setCelcius= function(celcius){
+            this.celcius = celcius
+        };
+        this.getCelcius= function(){
+            return this.celcius
+        };
+    }
+    function cTof (c){
+        let f = c * 9 / 5 + 32
+        document.write('Độ F là:'  + f + '<br>')
+    }
+    function cTok (c){
+        let k = c + 273.15
+        document.write('Độ K là:  '+ k)
+    }
+    let a = parseFloat(prompt('Nhập vào nhiệt độ C'))
+    let temp = new Temperature(a)
+    let c = temp.getCelcius()
+    cTof(c);
+    cTok(c);
+</script>
+</body>
+</html>
